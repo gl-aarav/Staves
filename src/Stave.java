@@ -38,6 +38,7 @@ public class Stave
 			PlayGame();
 			ScoreGame();
 			UpdateScore();
+			System.out.println("Current score: " + runningscore);
 		}
 		System.out.println("Your final score is " + score + ".\n\n\n");
 	}
@@ -68,6 +69,7 @@ public class Stave
 	}	
 	public void ScoreGame()
 	{
+		score = 0;
 		String rolls = new String("");
 		rolls = "" + (char)roll1 + (char)roll2 + (char)roll3 + (char)roll4;
 
@@ -84,10 +86,11 @@ public class Stave
 		else if (count == 2)
 			score ++;
 		
-		System.out.println("Current score: " + score);
+		
 	}
 	public void UpdateScore()
 	{
 		runningscore += score;
+		
 	}		
 }
