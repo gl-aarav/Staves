@@ -38,9 +38,9 @@ public class Stave
 			PlayGame();
 			ScoreGame();
 			UpdateScore();
-			System.out.println("Current score: " + runningscore);
+			System.out.println("This round earned a score of: " + runningscore);
 		}
-		System.out.println("Your final score is " + score + ".\n\n\n");
+		System.out.println("Your total score is " + score + ".\n\n\n");
 	}
 
 	public void PlayGame()
@@ -50,7 +50,7 @@ public class Stave
 		Roll roll = new Roll();
 		ShowStave stave = new ShowStave();
 		
-		System.out.print("Press return to throw chips.");
+		System.out.print("\nPress return to throw staves.");
 		String typed = in.nextLine();  
 		
 		roll1 =	roll.RollStave();
