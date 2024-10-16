@@ -13,6 +13,7 @@ public class Stave
 	private int roll4;
 	private int score;
 	private int runningscore;
+	private String PlayAgain;
 	public Stave(){
 		roll1 = 0;
 		roll2 = 0;
@@ -20,6 +21,7 @@ public class Stave
 		roll4 = 0;
 		score = 0;
 		runningscore = 0;
+	
 	}
 
 	public static void main (String[] args)
@@ -30,18 +32,33 @@ public class Stave
 	
 	public void RunGame()
 	{
+		Scanner in = new Scanner (System.in);
 		System.out.println("\n\n");
 		System.out.println("\t\t\tWelcome to Stave.java");		
-
-		for (int i = 0; i < 3; i++)	
-		{							
-			PlayGame();
-			ScoreGame();
-			UpdateScore();
-			System.out.println("This round earned a score of: " + runningscore);
-		}
-		System.out.println("Your total score is " + score + ".\n\n\n");
-	}
+		do{
+			runningscore = 0;
+			score = 0;
+			do{							
+				PlayGame();
+				ScoreGame();
+				UpdateScore();
+				System.out.println("This round earned a score of: " + runningscore);
+			  }while (runningscore<5);
+			System.out.println("Your total score is " + score + ".");
+			do{
+				System.out.println("Want to play again?");
+				PlayAgain = in.nextLine();
+				
+				if (PlayAgain.equalsIgnoreCase("yes")){
+					
+				}	
+				else if (PlayAgain.equalsIgnoreCase("no"))
+					System.out.println("Thanks for playing!");
+				else 
+					System.out.println("Please enter in the form or \"yes\" or \"no.\"");
+			} while (!PlayAgain.equalsIgnoreCase("yes") && !PlayAgain.equalsIgnoreCase("no"));
+		}while (PlayAgain.equalsIgnoreCase("yes"));	
+	}	
 
 	public void PlayGame()
 	{
@@ -94,3 +111,4 @@ public class Stave
 		
 	}		
 }
+
